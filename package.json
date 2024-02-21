@@ -2,7 +2,7 @@
   "name": "eslint-config-classic-typescript",
   "version": "0.1.0",
   "description": "Enforce classic JavaScript practices in TypeScript codebase by banning excessive keywords",
-  "main": "dist/index.js",
+  "main": "index.js",
   "scripts": {},
   "keywords": [
     "eslint",
