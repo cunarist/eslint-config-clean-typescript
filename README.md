@@ -82,6 +82,15 @@ class MyInterface {
 }
 ```
 
+Consider using optional types such as `number | undefined` for fields that can be empty or extended. This is equivalent to TypeScript's `Omit` or `Pick`.
+
+```typescript
+class MyClass {
+  a?: number; // number | undefined
+  b?: string; // string | undefined
+}
+```
+
 ### No Type Aliases
 
 ```typescript
