@@ -93,7 +93,7 @@ class MyClass {
 
 ### No Type Aliases
 
-Type statements are actually ghost declarations that don't actually exist in JavaScript.
+Type statements are ghost declarations that don't actually exist in JavaScript.
 
 ```typescript
 // Produces warning.
