@@ -91,7 +91,7 @@ function myFunction(array: Array<string>) {
 }
 ```
 
-### No Namespace
+### No Namespaces
 
 ES6 modules should be used instead of namespaces. TypeScript was influced quite a lot by C++ and C#, and the `namespace` keyword doesn't align well with JavaScript practices. This rule is also included in `typescript-eslint`'s recommended configuration.
 
@@ -100,7 +100,7 @@ ES6 modules should be used instead of namespaces. TypeScript was influced quite 
 namespace MyNamespace {}
 ```
 
-### Array Type Annotation
+### Array Type Annotations
 
 When annotating array types in TypeScript, developers encounter two syntaxes: `Array<T>` and `T[]`. While both syntaxes are valid and functionally equivalent, this configuration enforces the use of `Array<T>` over `T[]` for array type annotations.
 
