@@ -14,7 +14,7 @@ The basic principle is not to declare things that don't exist in JavaScript. By 
 
 This guide assumes that you're inside your project directory with `package.json`. Also, you should have `.eslintrc.js` or similar in your project folder, by following the exact steps introduced in the [`eslint` docs](https://eslint.org/docs/latest/use/getting-started) and [`typescript-eslint` docs](https://typescript-eslint.io/getting-started/).
 
-Install this configuration
+Once the prerequsites are ready, install this configuration
 
 ```bash
 npm install --save-dev eslint-config-classic-typescript
