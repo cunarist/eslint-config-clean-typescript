@@ -4,11 +4,34 @@
 
 Though TypeScript has brought us type-safety for web development, many developers agree on that it has too many duplicated keywords and ways of writing code to achieve the same thing.
 
-Not only that, TypeScript is not a standard web language. It might be hard to refactor the code once alternatives arise, such as [the type annotation proposal for JavaScript](https://github.com/tc39/proposal-type-annotations), if the codebase contains too much TypeScript-specific syntax.
+Not only that, TypeScript is not a standard web language. It might be hard to refactor the code once alternatives such as [the type annotation proposal for JavaScript](https://github.com/tc39/proposal-type-annotations) arise, if the codebase contains too much TypeScript-specific syntax.
 
 Based on [`eslint`](https://github.com/eslint/eslint) and [`typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint), this configuration enforces classic JavaScript syntax in TypeScript code. JavaScript is the standard language that has its own way of doing things.
 
 The basic principle is not to declare things that don't exist in JavaScript. By doing so, TypeScript can be more coherent with JavaScript, while assisting only in areas that are related to type safety.
+
+## Installation
+
+This guide assumes that you're inside your project directory with `package.json`. Also, you should have `.eslintrc.js` or similar in your project folder, by following the exact steps introduced in the [`eslint` docs](https://eslint.org/docs/latest/use/getting-started) and [`typescript-eslint` docs](https://typescript-eslint.io/getting-started/).
+
+Install this configuration
+
+```bash
+npm install --save-dev eslint-config-classic-typescript
+```
+
+Then, add this configuration to `.eslintrc.js` or similar.
+
+```javascript
+{
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/stylistic",
+    "eslint-config-classic-typescript" // ADD THIS LINE
+  ]
+}
+```
 
 ## Rules
 
@@ -23,8 +46,8 @@ This configuration makes your codebase use only `class` for types, to adhere to 
 ```typescript
 // Produces warning.
 enum MyEnum {
-  A,
-  B,
+  A = "west",
+  B = "east",
 }
 
 // Produces warning.
@@ -37,8 +60,8 @@ interface MyInterface {
 ```typescript
 // OK.
 class MyEnum {
-  static A = 0;
-  static B = 1;
+  static A = "west";
+  static B = "east";
 }
 
 // OK.
@@ -70,7 +93,7 @@ function myFunction(array: Array<string>) {
 
 ### No Namespace
 
-ES6 modules should be used instead of namespaces. TypeScript was influced quite a lot from C++ and C#, and this keyword doesn't align well with JavaScript practices. This rule is also included in `typescript-eslint`'s recommended configuration.
+ES6 modules should be used instead of namespaces. TypeScript was influced quite a lot by C++ and C#, and the `namespace` keyword doesn't align well with JavaScript practices. This rule is also included in `typescript-eslint`'s recommended configuration.
 
 ```typescript
 // Produces warning.
