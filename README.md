@@ -93,6 +93,8 @@ class MyClass {
 
 ### No Type Aliases
 
+Type statements are actually ghost declarations that don't actually exist in JavaScript.
+
 ```typescript
 // Produces warning.
 type ShapeType = { a: boolean; b: boolean };
