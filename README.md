@@ -10,6 +10,17 @@ Based on [`eslint`](https://github.com/eslint/eslint) and [`typescript-eslint`](
 
 The basic principle is not to declare things that don't exist in JavaScript. By doing so, TypeScript can be more coherent with JavaScript, while assisting only in areas that are related to type safety.
 
+## Table of Contents
+
+- [`eslint-config-classic-typescript`](#eslint-config-classic-typescript)
+  - [Table of Contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Rules](#rules)
+    - [Class Based Types](#class-based-types)
+    - [No Type Aliases](#no-type-aliases)
+    - [No Namespaces](#no-namespaces)
+    - [Array Type Annotations](#array-type-annotations)
+
 ## Installation
 
 This guide assumes that you're inside your project directory with `package.json`. Also, you should have `.eslintrc.js` or similar in your project folder, by following the exact steps introduced in the [`eslint` docs](https://eslint.org/docs/latest/use/getting-started) and [`typescript-eslint` docs](https://typescript-eslint.io/getting-started/).
