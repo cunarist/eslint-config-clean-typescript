@@ -1,0 +1,24 @@
+{
+  "name": "eslint-config-classic-typescript",
+  "version": "0.1.0",
+  "description": "Enforce classic JavaScript practices in TypeScript codebase by banning excessive keywords",
+  "main": "dist/index.js",
+  "scripts": {},
+  "keywords": [
+    "eslint",
+    "eslintconfig",
+    "typescript",
+    "classic",
+    "javascript",
+    "oop"
+  ],
+  "author": "Cunarist",
+  "homepage": "https://github.com/cunarist/eslint-config-classic-typescript",
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">= 7",
+    "eslint": ">= 8"
+  },
+  "dependencies": {
+    "@typescript-eslint/parser": "^7.0.2"
+  }
+}
