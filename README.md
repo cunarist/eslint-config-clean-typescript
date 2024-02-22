@@ -60,13 +60,13 @@ This is related to the historical path of TypeScript, where the `interface` keyw
 This configuration makes your codebase use only `class` for types, to adhere to classic JavaScript way of doing object-oriented programming.
 
 ```typescript
-// Produces warning.
+// Produces warning
 enum MyEnum {
   A = "west",
   B = "east",
 }
 
-// Produces warning.
+// Produces warning
 interface MyInterface {
   a: number;
   b: string;
@@ -74,13 +74,13 @@ interface MyInterface {
 ```
 
 ```typescript
-// OK.
+// OK
 class MyEnum {
   static A = "west";
   static B = "east";
 }
 
-// OK.
+// OK
 class MyInterface {
   a: number;
   b: string;
@@ -90,6 +90,7 @@ class MyInterface {
 Consider using optional types such as `number | undefined` for fields that can be empty or extended. This is equivalent to TypeScript's `Omit` or `Pick`.
 
 ```typescript
+// Recommended
 class MyClass {
   a?: number; // number | undefined
   b?: string; // string | undefined
@@ -103,18 +104,20 @@ class MyClass {
 Type statements are ghost declarations that don't actually exist in JavaScript.
 
 ```typescript
-// Produces warning.
+// Produces warning
 type ShapeType = { a: boolean; b: boolean };
 
-// Produces warning.
+// Produces warning
 type AliasType = Array<string>;
 
+// Not recommended
 function myFunction(array: AliasType) {
   console.log(array);
 }
 ```
 
 ```typescript
+// Recommended
 function myFunction(array: Array<string>) {
   console.log(array);
 }
@@ -127,7 +130,7 @@ function myFunction(array: Array<string>) {
 ES6 modules should be used instead of namespaces. TypeScript was heavily influced by C++ and C#, and the `namespace` keyword doesn't align well with JavaScript practices. This rule is also included in `typescript-eslint`'s recommended configuration.
 
 ```typescript
-// Produces warning.
+// Produces warning
 namespace MyNamespace {}
 ```
 
@@ -143,11 +146,11 @@ Although `T[]` may be more familiar to developers from lower-level languages lik
 In contrast, `Array<T>` provides a more explicit and descriptive representation of the `Array` type in JavaScript. This clarity is particularly beneficial for developers collaborating on projects, as it reduces ambiguity and aids in understanding the constructor and prototype of an array.
 
 ```typescript
-// Produces warning.
+// Produces warning
 const array: number[] = [1, 2, 3];
 ```
 
 ```typescript
-// OK.
+// OK
 const array: Array<number> = [1, 2, 3];
 ```
