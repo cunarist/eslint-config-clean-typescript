@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-clean-typescript",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Enforce classic JavaScript featuress in TypeScript codebase by banning excessive keywords",
   "main": "index.js",
   "scripts": {},
