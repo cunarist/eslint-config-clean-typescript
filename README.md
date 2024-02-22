@@ -2,15 +2,13 @@
 
 [![NPM Version](https://img.shields.io/npm/v/eslint-config-clean-typescript)](https://www.npmjs.com/package/eslint-config-clean-typescript)
 
-**Enforce classic JavaScript practices in TypeScript codebase by banning excessive keywords**
+**Enforce classic JavaScript syntax in TypeScript codebase by banning excessive keywords**
 
 Though TypeScript has brought us type-safety for web development, many developers agree on that it has too many duplicated keywords and ways of writing code to achieve the same thing.
 
 Not only that, TypeScript is not a standard web language. It might be hard to refactor the code once alternatives such as [the type annotation proposal for JavaScript](https://github.com/tc39/proposal-type-annotations) arise, if the codebase contains too much TypeScript-specific syntax.
 
-Based on [`eslint`](https://github.com/eslint/eslint) and [`typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint), this configuration enforces classic JavaScript syntax in TypeScript code. JavaScript is the standard language that has its own way of doing things.
-
-The basic principle is not to declare things that don't exist in JavaScript. By doing so, TypeScript can be more coherent with JavaScript, while assisting only in areas that are related to type safety.
+This package is an opinionated ESLint configuration. The basic principle is not to declare things that don't exist in JavaScript. By doing so, TypeScript can be more coherent with JavaScript, while assisting only in areas that are related to type safety.
 
 ## Table of Contents
 
@@ -25,9 +23,11 @@ The basic principle is not to declare things that don't exist in JavaScript. By 
 
 ## Installation
 
-This guide assumes that you're inside your project directory with `package.json`. Also, you should have `.eslintrc.js` or similar in your project folder, by following the exact steps introduced in the [`eslint` docs](https://eslint.org/docs/latest/use/getting-started) and [`typescript-eslint` docs](https://typescript-eslint.io/getting-started/).
+This guide assumes that you're inside your Node project directory [with `package.json`](https://docs.npmjs.com/cli/v8/commands/npm-init).
 
-Once the prerequsites are ready, install this configuration.
+Additionally, this configuration relies on [`eslint`](https://github.com/eslint/eslint) and [`typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint). You should have `.eslintrc.js` or similar in your project folder, by following the exact steps introduced in the [`eslint` docs](https://eslint.org/docs/latest/use/getting-started) and [`typescript-eslint` docs](https://typescript-eslint.io/getting-started/).
+
+Once the prerequisites are ready, install this configuration.
 
 ```bash
 npm install --save-dev eslint-config-clean-typescript
@@ -50,7 +50,10 @@ Then, add this configuration to `.eslintrc.js` or similar.
 
 ### Class Based Types
 
-Whether to use `type`, `interface`, or `class` to represent a typed structure is a long controversy in the TypeScript community.
+- ⭕ `class`
+- ❌ `interface`
+
+Whether to use `type`, `interface`, or `class` to represent a typed structure has been a long-standing controversy in the TypeScript community.
 
 This is related to the historical path of TypeScript, where the `interface` keyword was introduced in 2012, when JavaScript `class` keyword was not a thing yet. The JavaScript `class` keyword was introduced later in 2015.
 
@@ -95,6 +98,8 @@ class MyClass {
 
 ### No Type Aliases
 
+- ❌ `type`
+
 Type statements are ghost declarations that don't actually exist in JavaScript.
 
 ```typescript
@@ -117,7 +122,9 @@ function myFunction(array: Array<string>) {
 
 ### No Namespaces
 
-ES6 modules should be used instead of namespaces. TypeScript was influced quite a lot by C++ and C#, and the `namespace` keyword doesn't align well with JavaScript practices. This rule is also included in `typescript-eslint`'s recommended configuration.
+- ❌ `namespace`
+
+ES6 modules should be used instead of namespaces. TypeScript was heavily influced by C++ and C#, and the `namespace` keyword doesn't align well with JavaScript practices. This rule is also included in `typescript-eslint`'s recommended configuration.
 
 ```typescript
 // Produces warning.
@@ -126,11 +133,14 @@ namespace MyNamespace {}
 
 ### Array Type Annotations
 
-When annotating array types in TypeScript, developers encounter two syntaxes: `Array<T>` and `T[]`. While both syntaxes are valid and functionally equivalent, this configuration enforces the use of `Array<T>` over `T[]` for array type annotations.
+- ⭕ `Array<T>`
+- ❌ `T[]`
 
-The decision to prefer `Array<T>` over `T[]` is for ensuring alignment with high-level language paradigm, particularly in the context of JavaScript development. While `T[]` may be more familiar to developers coming from lower-level languages such as C, C++, and Rust, where arrays represent contiguous memory spaces, it does not really make sense for high-level languages like JavaScript.
+Preferring `Array<T>` over `T[]` is for ensuring alignment with high-level language paradigm, particularly in the context of JavaScript development.
 
-In contrast, `Array<T>` provides a more explicit and descriptive representation of the `Array` type of JavaScript. This clarity is particularly beneficial for developers collaborating on projects, as it reduces ambiguity and aids in understanding the constructor and prototype of an array.
+Although `T[]` may be more familiar to developers from lower-level languages like C, C++, and Rust, where arrays represent contiguous memory spaces, it does not really make sense for high-level languages like JavaScript.
+
+In contrast, `Array<T>` provides a more explicit and descriptive representation of the `Array` type in JavaScript. This clarity is particularly beneficial for developers collaborating on projects, as it reduces ambiguity and aids in understanding the constructor and prototype of an array.
 
 ```typescript
 // Produces warning.
