@@ -1,5 +1,5 @@
 {
-  "name": "eslint-config-classic-typescript",
+  "name": "eslint-config-clean-typescript",
   "version": "0.1.2",
   "description": "Enforce classic JavaScript practices in TypeScript codebase by banning excessive keywords",
   "main": "index.js",
@@ -13,7 +13,7 @@
     "oop"
   ],
   "author": "Cunarist",
-  "homepage": "https://github.com/cunarist/eslint-config-classic-typescript",
+  "homepage": "https://github.com/cunarist/eslint-config-clean-typescript",
   "peerDependencies": {
     "@typescript-eslint/eslint-plugin": ">= 7",
     "eslint": ">= 8"

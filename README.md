@@ -1,4 +1,6 @@
-# `eslint-config-classic-typescript`
+# `eslint-config-clean-typescript`
+
+[![NPM Version](https://img.shields.io/npm/v/eslint-config-clean-typescript)](https://www.npmjs.com/package/eslint-config-clean-typescript)
 
 **Enforce classic JavaScript practices in TypeScript codebase by banning excessive keywords**
 
@@ -12,7 +14,7 @@ The basic principle is not to declare things that don't exist in JavaScript. By 
 
 ## Table of Contents
 
-- [`eslint-config-classic-typescript`](#eslint-config-classic-typescript)
+- [`eslint-config-clean-typescript`](#eslint-config-clean-typescript)
   - [Table of Contents](#table-of-contents)
   - [Installation](#installation)
   - [Rules](#rules)
@@ -28,7 +30,7 @@ This guide assumes that you're inside your project directory with `package.json`
 Once the prerequsites are ready, install this configuration.
 
 ```bash
-npm install --save-dev eslint-config-classic-typescript
+npm install --save-dev eslint-config-clean-typescript
 ```
 
 Then, add this configuration to `.eslintrc.js` or similar.
@@ -39,7 +41,7 @@ Then, add this configuration to `.eslintrc.js` or similar.
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/stylistic",
-    "eslint-config-classic-typescript" // ADD THIS LINE
+    "eslint-config-clean-typescript" // ADD THIS LINE
   ]
 }
 ```
