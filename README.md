@@ -2,7 +2,7 @@
 
 [![NPM Version](https://img.shields.io/npm/v/eslint-config-clean-typescript)](https://www.npmjs.com/package/eslint-config-clean-typescript)
 
-**Enforce classic JavaScript syntax in TypeScript codebase by banning excessive keywords**
+**Enforce classic JavaScript features in TypeScript codebase by banning excessive keywords**
 
 Though TypeScript has brought us type-safety for web development, many developers agree on that it has too many duplicated keywords and ways of writing code to achieve the same thing.
 
